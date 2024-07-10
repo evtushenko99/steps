@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Steps</string>
+
+    <string name="daily_counter_screen">Tree</string>
+
+    <string name="setting_weight_title">Вес</string>
+    <string name="setting_weight_subtitle">Нужно для расчета калорий</string>
+
+    <string name="setting_daily_goal_title">Дневная цель</string>
+
+    <string name="setting_pace_title">"Чувствительность"</string>
+    <string name="setting_pace_subtitle">"Чем выше точность, тем меньшие движения будут считать за шаги"</string>
+    <string name="setting_pace_slow_value">"Низкая"</string>
+    <string name="setting_pace_normal_value">"Средняя"</string>
+    <string name="setting_pace_fast_value">"Высокая"</string>
+
+    <string name="setting_step_length_title">Длина шага</string>
+    <string name="setting_step_length_height_subtitle">Нужно для расчета расстояния и скорости</string>
+
+    <string name="setting_height_title">Рост</string>
+
+    <string name="setting_more_title">"Больше настроек"</string>
+    <string name="setting_more_subtitle">"Чувствительность, Длина шага, Рост"</string>
+
+    <string name="use_dark_mode">Темная тема</string>
+
+
+    <string name="stat_trees_collected">Деревьев Собрано</string>
+    <string name="stat_steps_taken">Шагов пройдено</string>
+
+    <string name="stat_calorie_burned_title">%1$s ккал</string>
+    <string name="stat_calorie_burned_subtitle">Калорий сожжено</string>
+
+    <string name="stat_distanced_traveled_title">%1$s км</string>
+    <string name="stat_distanced_traveled_subtitle">Пройдено километров</string>
+
+    <string name="stat_carbon_dioxide_saved_title">%1$s кг</string>
+    <string name="stat_carbon_dioxide_saved_subtitle">Сэкономлено углекислого газа</string>
+
+    <string name="service_content_text">%1$i ккал %2$i км %3$i% от дневной цели</string>
+    <string name="service_name">step counter service name</string>
+</resources>

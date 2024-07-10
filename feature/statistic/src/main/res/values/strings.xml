@@ -1,0 +1,4 @@
+<resources>
+    <string name="statistic_screen_tab_summary">Сводка</string>
+    <string name="statistic_screen_tab_details">За сегодня</string>
+</resources>
