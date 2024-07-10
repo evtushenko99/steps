@@ -37,6 +37,6 @@
     <string name="stat_carbon_dioxide_saved_title">%1$s кг</string>
     <string name="stat_carbon_dioxide_saved_subtitle">Сэкономлено углекислого газа</string>
 
-    <string name="service_content_text">%1$i ккал %2$i км %3$i% от дневной цели</string>
+    <string name="service_content_text">%1$s ккал %2$s км %3$s процентов от дневной цели</string>
     <string name="service_name">step counter service name</string>
 </resources>

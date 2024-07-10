@@ -116,9 +116,9 @@ class StepCounterService : LifecycleService(), SensorEventListener {
         val progress = if (goal == 0) 0 else steps * 100 / goal
         val content = resources.getString(
             R.string.service_content_text,
-            calorieBurned,
-            distanceTravelled,
-            progress
+            calorieBurned.toString(),
+            distanceTravelled.toString(),
+            progress.toString()
         )
 
         NotificationCompat.Builder(this@StepCounterService, NOTIFICATION_CHANNEL_ID)

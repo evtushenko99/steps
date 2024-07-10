@@ -77,7 +77,7 @@ internal fun DailyCounterScreen(
                     )
                 }
                 LinearProgressIndicator(
-                    progress = { state.value.stepsTaken * 100 / state.value.dailyGoal.toFloat() },
+                    progress = { state.value.stepsTaken  / state.value.dailyGoal.toFloat() },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = Paddings.small),
