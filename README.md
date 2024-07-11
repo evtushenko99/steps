@@ -35,7 +35,7 @@
 Модуль localData
 
 ## Как это выглядит
-![Steps Сегодня](https://github.com/evtushenko99/steps/assets/46201617/1791aba3-0ed2-4414-8fa9-1734a93356d0)
+<img src="https://github.com/evtushenko99/steps/assets/46201617/1791aba3-0ed2-4414-8fa9-1734a93356d0" width="200" />
 ![Steps Отчет за сегодня](https://github.com/evtushenko99/steps/assets/46201617/6890a3a2-6ce9-4729-a900-8d889314befc)
 ![Отчет сводка](https://github.com/evtushenko99/steps/assets/46201617/abf6cf6c-69e1-42bb-973c-0237f6e7eead)
 ![Steps Еще без иконки](https://github.com/evtushenko99/steps/assets/46201617/93655114-1468-407a-8ba7-71bce0485b05)
