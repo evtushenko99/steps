@@ -1,5 +1,6 @@
 package com.example.designsystem
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -58,6 +59,10 @@ fun DSAppBar(
 @Composable
 fun PreviewStepsAppBar() {
     StepsTheme {
-        DSAppBar("Tree", {})
+        Column {
+            DSAppBar("Tree", {})
+            DSAppBar("Tree")
+        }
+
     }
 }

@@ -113,7 +113,7 @@ class StepCounterService : LifecycleService(), SensorEventListener {
 
     private fun createNotification(state: StepCounterState): Notification = state.run {
         val title = "$steps ${resources.getString(R.string.stat_steps_taken)}"
-        val progress = if (goal == 0) 0 else steps * 100 / goal
+        val progress = if (goal == 0) 0 else steps / goal
         val content = resources.getString(
             R.string.service_content_text,
             calorieBurned.toString(),

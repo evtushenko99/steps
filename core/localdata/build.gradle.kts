@@ -9,6 +9,7 @@ android {
 dependencies {
 
     implementation(project(":core:utils"))
+    implementation(project(":core:test"))
 
     implementation(libs.core.ktx)
 

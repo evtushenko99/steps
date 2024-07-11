@@ -29,8 +29,7 @@ class ThemeRepositoryImpl @Inject constructor(
         }
     }
 
-    companion object {
-        //App settings
+   private companion object {
         val IS_DARK_THEME = booleanPreferencesKey("IsDarkTheme")
     }
 }

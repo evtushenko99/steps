@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/.gitignore
+/buildLogic/convension/build/
+/.idea/androidTestResultsUserPreferences.xml
+/buildLogic/build/

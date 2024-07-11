@@ -150,10 +150,10 @@ fun ProfileImage(
             shape = CircleShape,
             border = BorderStroke(width = BorderWidth.small, MaterialTheme.colorScheme.onPrimary),
         ) {
-            if (profileImageUrl.value.isNotBlank()) {
+            if (imageUri.value.isNotBlank()) {
                 AsyncImage(
                     model = ImageRequest.Builder(context)
-                        .data(profileImageUrl.value)
+                        .data(imageUri.value)
                         .build(),
                     contentDescription = "",
                     modifier = Modifier

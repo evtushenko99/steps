@@ -21,11 +21,6 @@ import kotlinx.coroutines.launch
 import java.time.LocalDate
 import javax.inject.Inject
 
-/**
- * TODO - Описание класса
- *
- * @author Евтушенко Максим 30.06.2024
- */
 @HiltViewModel
 class StatisticViewModel @Inject constructor(
     private val getDayUseCase: GetDayUseCase,

@@ -20,11 +20,6 @@ import com.example.profile.presentation.MoreSettingsRoute
 import com.example.statistic.presentation.StatisticRoute
 import com.example.utils.Navigation
 
-/**
- * TODO - Описание класса
- *
- * @author Евтушенко Максим 17.05.2024
- */
 @Composable
 fun StepsNavHost(
     navController: NavHostController,

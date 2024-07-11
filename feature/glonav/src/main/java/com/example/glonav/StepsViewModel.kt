@@ -7,11 +7,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-/**
- * TODO - Описание класса
- *
- * @author Евтушенко Максим 29.06.2024
- */
 @HiltViewModel
 class StepsViewModel @Inject constructor(
     themeRepository: ThemeRepository,

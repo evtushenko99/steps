@@ -15,11 +15,6 @@ import kotlinx.coroutines.launch
 import java.time.LocalDate
 import javax.inject.Inject
 
-/**
- * TODO - Описание класса
- *
- * @author Евтушенко Максим 19.05.2024
- */
 @HiltViewModel
 class DailyCounterViewModel @Inject constructor(
     private val getDayUseCase: GetDayUseCase,

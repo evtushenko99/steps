@@ -1,12 +1,16 @@
 package com.example.dailycounter.presentation
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.absolutePadding
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.LinearProgressIndicator
@@ -24,10 +28,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.DSAppBar
-import com.example.designsystem.InfoElementModifierTopBottom
-import com.example.designsystem.InfoElementPrimary
-import com.example.designsystem.InfoElementSecondary
-import com.example.designsystem.InfoElementTertiary
 import com.example.designsystem.theme.Paddings
 import com.example.designsystem.theme.StepsTheme
 import com.example.utils.R
@@ -57,7 +57,7 @@ internal fun DailyCounterScreen(
 
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxSize()
                     .padding(paddingValues)
                     .padding(Paddings.medium)
                     .verticalScroll(rememberScrollState())
@@ -77,7 +77,7 @@ internal fun DailyCounterScreen(
                     )
                 }
                 LinearProgressIndicator(
-                    progress = { state.value.stepsTaken  / state.value.dailyGoal.toFloat() },
+                    progress = { state.value.stepsTaken / state.value.dailyGoal.toFloat() },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = Paddings.small),
@@ -89,55 +89,24 @@ internal fun DailyCounterScreen(
                     style = MaterialTheme.typography.bodyMedium
                 )
 
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally
+
+                val treeResource =
+                    getTreeResource(state.value.stepsTaken.toDouble() / state.value.dailyGoal)
+
+                Box(
+                    modifier = Modifier.weight(1f),
+                    contentAlignment = Alignment.BottomCenter,
                 ) {
-                    val treeResource =
-                        getTreeResource(state.value.stepsTaken.toDouble() / state.value.dailyGoal)
                     Image(
                         painter = painterResource(id = treeResource),
                         contentDescription = "",
                         modifier = Modifier
-                            .absolutePadding(top = Paddings.small)
-                            .padding(top = 48.dp),
+                            .padding(top = 48.dp)
+                            .fillMaxSize(),
                         contentScale = ContentScale.Fit
-                    )
-
-                    InfoElementSecondary(
-                        modifier = InfoElementModifierTopBottom.padding(top = Paddings.medium),
-                        title = stringResource(
-                            R.string.stat_calorie_burned_title,
-                            state.value.calorieBurned
-                        ),
-                        subTitle = stringResource(
-                            id = R.string.stat_calorie_burned_subtitle
-                        )
-                    )
-                    InfoElementTertiary(
-                        modifier = InfoElementModifierTopBottom,
-                        title = stringResource(
-                            R.string.stat_distanced_traveled_title,
-                            state.value.distanceTravelled
-                        ),
-                        subTitle = stringResource(
-                            id = R.string.stat_distanced_traveled_subtitle
-                        )
-                    )
-                    InfoElementPrimary(
-                        modifier = InfoElementModifierTopBottom,
-                        title = stringResource(
-                            R.string.stat_carbon_dioxide_saved_title,
-                            state.value.carbonDioxideSaved
-                        ),
-                        subTitle = stringResource(
-                            id = R.string.stat_carbon_dioxide_saved_subtitle
-                        )
                     )
                 }
             }
-
-
         }
     )
 }

@@ -3,7 +3,6 @@ package com.example.localdata.data.source.dao
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.localdata.data.source.ForestDatabase
 import com.example.localdata.model.Day
 import com.example.localdata.model.DaySettings
@@ -13,18 +12,18 @@ import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
 import java.time.LocalDate
 
 class DaysDaoTest {
 
+    private val context = ApplicationProvider.getApplicationContext<Context>()
     private val localDate = LocalDate.now()
     private lateinit var database: ForestDatabase
     private lateinit var daysDao: DaysDao
 
     @Before
     fun setUp() {
-        val context = ApplicationProvider.getApplicationContext<Context>()
+
         database = Room.inMemoryDatabaseBuilder(context, ForestDatabase::class.java).build().also {
             daysDao = it.daysDao
         }
