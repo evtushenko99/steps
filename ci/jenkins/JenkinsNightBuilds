@@ -1,0 +1,41 @@
+pipeline {
+
+    agent {
+        docker {
+            image 'evtushenkomaxim/dockerfile:0.2.0'
+        }
+    }
+
+    triggers {
+        cron('TZ=Europe/Moscow \n 0 22 * * *')
+    }
+
+    parameters {
+        string(name: "branch", defaultValue: "development", description: "Введите название ветки")
+    }
+
+    stages {
+
+        stage('clone'){
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[url: 'https://github.com/evtushenko99/steps.git']]
+                ])
+            }
+        }
+
+        stage('gradle-profiler') {
+            steps {
+                sh 'gradle-profiler --benchmark --project-dir . assembleDebug'
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: 'profile-out/**', allowEmptyArchive: true
+                }
+            }
+        }
+
+    }
+}
