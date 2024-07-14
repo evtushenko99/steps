@@ -1,8 +1,10 @@
+import com.github.triplet.gradle.androidpublisher.ReleaseStatus
 import java.io.FileInputStream
 import java.util.Properties
 
 plugins {
     alias(libs.plugins.steps.application.android.library)
+    alias(libs.plugins.triplet.play)
 }
 
 val keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -25,8 +27,25 @@ android {
         }
     }
 
+  /* productFlavors {
+        google {
+            dimension = "default"
+            versionName = android.defaultConfig.versionName + "-Google"
+        }
+    }*/
+
     buildTypes {
+        debug {
+            isDebuggable = true
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+        }
+     /*   getByName("beta") {
+            applicationIdSuffix = ".beta"
+            versionNameSuffix = "-beta"
+        }*/
         release {
+            isDebuggable = false
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,6 +55,15 @@ android {
         }
     }
 
+}
+
+play {
+    enabled.set(false)
+    track.set("production")
+    userFraction.set(0.1) // 10%
+    defaultToAppBundles.set(true)
+    releaseStatus.set(ReleaseStatus.DRAFT)
+    serviceAccountCredentials.set(file("google-play.json"))
 }
 
 
