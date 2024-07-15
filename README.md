@@ -42,4 +42,5 @@
 <img src="https://github.com/evtushenko99/steps/assets/46201617/0013f78e-fb97-4c64-9df5-8a1744d3ebf4" width="200" />
 
 ## Многомодульность (10 модулей)
+<img src="https://github.com/user-attachments/assets/6c916a69-f064-4f52-a702-4d1b84534df5" width="500">
 
