@@ -24,24 +24,20 @@ data class Day(
 
     companion object
 
-    val distanceTravelled
-        get() = run {
-            val distanceCentimeters = steps * stepLength
-            distanceCentimeters.toDouble() / 100_000
-        }
+    val distanceTravelled: Double
+        get() = ((steps * stepLength).toDouble() / 100_000).round()
 
-    val calorieBurned
-        get() = run {
+    val calorieBurned: Double
+        get() {
             val modifier = height / 182.0 + weight / 70.0 - 1
-            val rawValue = (0.04 * steps * pace * modifier)
-            rawValue.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
+            return (0.04 * steps * pace * modifier).round()
         }
 
     val carbonDioxideSaved
-        get() = run {
-            val rawValue = steps * 0.1925 / 1000.0
-            rawValue.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
-        }
+        get() = (steps * 0.1925 / 1000.0).round()
+
+
+    private fun Double.round() = this.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
 }
 
 fun Day.Companion.of(date: LocalDate, settings: Settings, steps: Int = 0): Day {

@@ -27,12 +27,19 @@ android {
         }
     }
 
-  /* productFlavors {
-        google {
-            dimension = "default"
+    // Specifies one flavor dimension.
+    flavorDimensions += "market"
+    productFlavors {
+        create("google") {
+            dimension = "market"
             versionName = android.defaultConfig.versionName + "-Google"
         }
-    }*/
+
+        create("huawei") {
+            dimension = "market"
+            versionName = android.defaultConfig.versionName + "-Huawei"
+        }
+    }
 
     buildTypes {
         debug {
@@ -40,10 +47,11 @@ android {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
         }
-     /*   getByName("beta") {
+        create("beta") {
+            isDebuggable = true
             applicationIdSuffix = ".beta"
             versionNameSuffix = "-beta"
-        }*/
+        }
         release {
             isDebuggable = false
             isMinifyEnabled = false
@@ -58,12 +66,12 @@ android {
 }
 
 play {
+    serviceAccountCredentials.set(file("keystores/serviceStepsKey.json"))
     enabled.set(false)
-    track.set("production")
+    track.set("release")
     userFraction.set(0.1) // 10%
     defaultToAppBundles.set(true)
-    releaseStatus.set(ReleaseStatus.DRAFT)
-    serviceAccountCredentials.set(file("google-play.json"))
+    releaseStatus.set(ReleaseStatus.IN_PROGRESS)
 }
 
 
